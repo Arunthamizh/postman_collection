@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "fdc5bf4a-1cb1-4bcd-8171-5c9e729aa3ac",
+		"name": "Sails Blueprint API Example",
+		"description": "An example collection demonstrating how to use the [Blueprint API](http://sailsjs.org/documentation/reference/blueprint-api) in Sails.js.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat"
+					]
+				},
+				"description": "Fetch a list of records matching the specified criteria.\n\nSee http://sailsjs.org/documentation/reference/blueprint-api/find-where"
+			},
+			"response": []
+		},
+		{
+			"name": "Find One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat/1",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat",
+						"1"
+					]
+				},
+				"description": "Look up a single record from the database.\n\nSee http://sailsjs.org/documentation/reference/blueprint-api/find-one"
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "Yo what's up everybody??",
+							"type": "text"
+						},
+						{
+							"key": "postedTo",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat"
+					]
+				},
+				"description": "Create a new record in your database.\n\nhttp://sailsjs.org/documentation/reference/blueprint-api/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat/1",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat",
+						"1"
+					]
+				},
+				"description": "Delete an existing record specified by `id` from the database forever, and respond with the deleted record.\n\nSee http://sailsjs.org/documentation/reference/blueprint-api/destroy"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "Hello.  What is happening now, people?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat/1",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat",
+						"1"
+					]
+				},
+				"description": "Update an existing record in the database, and notify subscribed sockets that it has changed.\n\nSee http://sailsjs.org/documentation/reference/blueprint-api/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/channel/1/chats/1",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"channel",
+						"1",
+						"chats",
+						"1"
+					]
+				},
+				"description": "Add a foreign record to a collection association of this record.\n\nhttp://sailsjs.org/documentation/reference/blueprint-api/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Create channel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "General",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "general",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/channel",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"channel"
+					]
+				},
+				"description": "Create a new record in your database.\n\nhttp://sailsjs.org/documentation/reference/blueprint-api/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Recreates #3543",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://blueprint-api.example.sailsjs.org/chat?where={ \"updatedAt\": { \">\": \"2016-02-03T23:47:42.927Z\"} }",
+					"protocol": "http",
+					"host": [
+						"blueprint-api",
+						"example",
+						"sailsjs",
+						"org"
+					],
+					"path": [
+						"chat"
+					],
+					"query": [
+						{
+							"key": "where",
+							"value": "{ \"updatedAt\": { \">\": \"2016-02-03T23:47:42.927Z\"} }"
+						}
+					]
+				},
+				"description": "See https://github.com/balderdashy/sails/issues/3543\n"
+			},
+			"response": []
+		}
+	]
+}
